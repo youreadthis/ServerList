@@ -42,23 +42,26 @@ function readAccount() {
 function renderServerCard(server, index) {
   const favorites = JSON.parse(localStorage.getItem("servernaya-favorites") || "[]");
   const isFavorite = favorites.includes(server.name);
+  // Карточка сервера
   const card = `
+    <div class="col">
     <article class="card server-card h-100" style="animation-delay:${index * 55}ms">
       <div class="server-cover">
         <img src="${server.image}" alt="Мир сервера «${server.name}»" loading="lazy">
         <span class="game-label">${server.game}</span>
-        <span class="online-label"><span class="live-dot"></span>${server.online} онлайн</span>
+        <span class="online-label d-flex align-items-center gap-2"><span class="live-dot"></span>${server.online} онлайн</span>
       </div>
       <div class="card-body server-card-body">
-        <div class="server-card-title-row">
+        <div class="server-card-title-row d-flex align-items-start justify-content-between gap-2">
           <h3>${server.name}</h3>
-          <button class="btn btn-link favorite-button${isFavorite ? " is-favorite" : ""}" type="button" data-favorite="${server.name}" aria-label="${isFavorite ? "Убрать из избранного" : "Добавить в избранное"}" aria-pressed="${isFavorite}"><i data-lucide="heart"></i></button>
+          <button class="btn btn-link d-inline-flex align-items-center justify-content-center favorite-button${isFavorite ? " is-favorite" : ""}" type="button" data-favorite="${server.name}" aria-label="${isFavorite ? "Убрать из избранного" : "Добавить в избранное"}" aria-pressed="${isFavorite}"><i data-lucide="heart"></i></button>
         </div>
         <p class="server-description">${server.description}</p>
-        <div class="tag-row">${server.tags.map((tag) => `<span class="server-tag">${tag}</span>`).join("")}</div>
-        <div class="server-card-meta"><span><i data-lucide="users-round"></i> ${server.online} игроков</span><span>${server.address}</span></div>
+        <div class="tag-row d-flex flex-wrap gap-2">${server.tags.map((tag) => `<span class="server-tag">${tag}</span>`).join("")}</div>
+        <div class="server-card-meta d-flex justify-content-between gap-2"><span><i data-lucide="users-round"></i> ${server.online} игроков</span><span>${server.address}</span></div>
       </div>
-    </article>`;
+    </article>
+    </div>`;
   return card;
 }
 

@@ -14,10 +14,10 @@
   <script src="scripts/app.js" defer></script>
 </head>
 <body data-page="register">
-  <header class="navbar site-header"><div class="container-xl header-inner">
-    <a class="navbar-brand brand" href="index.html" aria-label="Серверная, главная"><span class="brand-mark"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
-    <nav class="navbar-nav flex-row main-nav" aria-label="Основная навигация"><a class="nav-link" href="index.html">Главная</a><a class="nav-link" href="servers.html">Серверы</a></nav>
-    <a class="account-link is-current" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon"><i data-lucide="user-round"></i></span></a>
+  <header class="navbar site-header py-2"><div class="container-xl header-inner d-flex align-items-center justify-content-between">
+    <a class="navbar-brand brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Серверная, главная"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
+    <nav class="navbar-nav flex-row main-nav gap-2 gap-sm-4 align-self-stretch" aria-label="Основная навигация"><a class="nav-link d-inline-flex align-items-center" href="index.html">Главная</a><a class="nav-link d-inline-flex align-items-center" href="servers.html">Серверы</a></nav>
+    <a class="account-link is-current d-inline-flex align-items-center gap-0 gap-sm-3" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon d-flex align-items-center justify-content-center"><i data-lucide="user-round"></i></span></a>
   </div></header>
 
   <main class="container-xl page-shell register-page row align-items-center g-4 g-lg-5">
@@ -29,6 +29,7 @@
       <p class="eyebrow">Добро пожаловать</p>
       <h1>Создай<br>аккаунт<span>.</span></h1>
       <p class="form-intro">Один аккаунт для твоих серверов и игровых сообществ.</p>
+      <!-- Форма регистрации -->
       <form id="register-form">
         <div class="mb-3"><label class="form-label" for="account-name">Имя аккаунта</label>
         <input class="form-control" id="account-name" name="name" type="text" placeholder="Например, PixelFox" minlength="2" maxlength="24" autocomplete="username" required></div>
@@ -36,12 +37,12 @@
         <input class="form-control" id="account-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
         <div class="mb-3"><label class="form-label" for="account-password">Пароль</label>
         <input class="form-control" id="account-password" name="password" type="password" placeholder="Не менее 8 символов" minlength="8" autocomplete="new-password" required></div>
-        <button class="btn btn-primary button register-submit w-100" type="submit">Зарегистрироваться <i data-lucide="arrow-right"></i></button>
+        <button class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 button register-submit w-100" type="submit">Зарегистрироваться <i data-lucide="arrow-right"></i></button>
         <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
       </form>
-      <p class="login-prompt">Уже есть аккаунт? <a href="account.html">Личный кабинет <i data-lucide="arrow-up-right"></i></a></p>
+      <p class="login-prompt">Уже есть аккаунт? <a class="d-inline-flex align-items-center gap-1" href="account.html">Личный кабинет <i data-lucide="arrow-up-right"></i></a></p>
     </section>
   </main>
-  <footer class="site-footer"><div class="container-xl d-flex align-items-center justify-content-between"><a class="brand footer-brand" href="index.html"><span>серверная<span class="brand-period">.</span></span></a><span class="footer-tagline">Играй вместе. Открывай новое.</span><a href="servers.html">Каталог серверов <i data-lucide="arrow-up-right"></i></a><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></footer>
+  <footer class="site-footer"><div class="container-xl d-flex align-items-center justify-content-between flex-wrap"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span>серверная<span class="brand-period">.</span></span></a><span class="footer-tagline">Играй вместе. Открывай новое.</span><a class="d-inline-flex align-items-center gap-1" href="servers.html">Каталог серверов <i data-lucide="arrow-up-right"></i></a><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></footer>
 </body>
 </html>
