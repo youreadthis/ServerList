@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Как добавить сервер — Серверная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body data-page="add-server">
+  <!-- Общая навигация: перейти к каталогу или ознакомиться с проектом. -->
+  <header class="navbar site-header py-2"><div class="container-xl header-inner d-flex align-items-center justify-content-between">
+    <a class="navbar-brand brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Серверная, главная"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
+    <nav class="navbar-nav flex-row main-nav gap-2 gap-sm-4 align-self-stretch" aria-label="Основная навигация"><a class="nav-link d-inline-flex align-items-center" href="index.html">Главная</a><a class="nav-link d-inline-flex align-items-center" href="servers.html">Серверы</a><a class="nav-link d-inline-flex align-items-center" href="about.html">О проекте</a><a class="nav-link d-inline-flex align-items-center active" href="add-server.html" aria-current="page">Гайд</a></nav>
+    <a class="account-link d-inline-flex align-items-center gap-0 gap-sm-3" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon d-flex align-items-center justify-content-center"><i data-lucide="user-round"></i></span></a>
+  </div></header>
+
+  <main class="container-xl page-shell info-page">
+    <!-- Пошаговый сценарий для владельца сервера. -->
+    <section class="info-hero">
+      <p class="eyebrow"><span class="live-dot"></span> Для владельцев сообществ</p>
+      <h1>Твой сервер.<br>Новые <span>игроки.</span></h1>
+      <p class="info-lead">Подготовь информацию о сервере, чтобы игроки сразу поняли, что их ждёт и как к тебе подключиться.</p>
+    </section>
+
+    <section class="info-section" aria-labelledby="guide-heading">
+      <p class="eyebrow">ПУБЛИКАЦИЯ В КАТАЛОГЕ</p>
+      <h2 id="guide-heading">Как подготовить сервер</h2>
+      <div class="guide-list">
+        <article class="guide-step"><span class="guide-step-number">01</span><div><h2>Проверь доступность</h2><p>Убедись, что сервер запущен, адрес и порт верны, а подключение работает вне локальной сети. Если есть ограничения по версии игры, запиши их.</p></div></article>
+        <article class="guide-step"><span class="guide-step-number">02</span><div><h2>Собери описание</h2><p>Расскажи, какая это игра, чем сервер интересен и для кого он подходит. Укажи режим, язык общения, правила и требования к игрокам.</p></div></article>
+        <article class="guide-step"><span class="guide-step-number">03</span><div><h2>Подготовь данные для карточки</h2><p>Собери название, адрес подключения, краткое описание, теги и ссылку на изображение. Не добавляй пароли, личные данные или ссылки, которым не доверяешь.</p></div></article>
+        <article class="guide-step"><span class="guide-step-number">04</span><div><h2>Отправь заявку на проверку</h2><p>В этой демонстрационной версии автоматической публикации пока нет. Передай данные поддержке по указанному адресу; после проверки карточку можно будет добавить в каталог.</p></div></article>
+      </div>
+
+      <!-- Чек-лист упрощает сбор сведений перед отправкой. -->
+      <div class="guide-details">
+        <h2>Чек-лист заявки</h2>
+        <ul>
+          <li>Название и поддерживаемая игра</li>
+          <li>IP-адрес или домен и порт</li>
+          <li>Описание и игровой режим</li>
+          <li>Версия клиента и правила входа</li>
+          <li>Теги: язык, PvP, моды и другое</li>
+          <li>Контакт владельца для обратной связи</li>
+        </ul>
+      </div>
+
+      <div class="guide-action d-flex flex-wrap align-items-center gap-3">
+        <a class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 button" href="about.html#support-heading">Связаться с поддержкой <i data-lucide="arrow-up-right"></i></a>
+        <p>Адрес поддержки указан на странице о проекте.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container-xl footer-inner"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a><div class="footer-meta"><nav class="footer-links d-flex align-items-center gap-3" aria-label="Ссылки в подвале"><a href="servers.html">Серверы</a><a href="account.html">Личный кабинет</a><a href="about.html">О проекте</a><a href="add-server.html" aria-current="page">Добавить сервер</a></nav><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></div></footer>
+</body>
+</html>

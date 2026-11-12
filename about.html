@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>О проекте — Серверная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body data-page="about">
+  <!-- Общая навигация связывает информационные страницы с каталогом. -->
+  <header class="navbar site-header py-2"><div class="container-xl header-inner d-flex align-items-center justify-content-between">
+    <a class="navbar-brand brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Серверная, главная"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
+    <nav class="navbar-nav flex-row main-nav gap-2 gap-sm-4 align-self-stretch" aria-label="Основная навигация"><a class="nav-link d-inline-flex align-items-center" href="index.html">Главная</a><a class="nav-link d-inline-flex align-items-center" href="servers.html">Серверы</a><a class="nav-link d-inline-flex align-items-center active" href="about.html" aria-current="page">О проекте</a><a class="nav-link d-inline-flex align-items-center" href="add-server.html">Гайд</a></nav>
+    <a class="account-link d-inline-flex align-items-center gap-0 gap-sm-3" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon d-flex align-items-center justify-content-center"><i data-lucide="user-round"></i></span></a>
+  </div></header>
+
+  <main class="container-xl page-shell info-page">
+    <!-- Коротко объясняем назначение и текущий статус проекта. -->
+    <section class="info-hero">
+      <p class="eyebrow"><span class="live-dot"></span> Знакомство с проектом</p>
+      <h1>Играть вместе<br>начинается <span>здесь.</span></h1>
+      <p class="info-lead">«Серверная» помогает игрокам находить игровые сообщества, сравнивать серверы и выбирать новое место для совместных приключений.</p>
+    </section>
+
+    <section class="info-section" aria-labelledby="about-purpose">
+      <p class="eyebrow">ЗАЧЕМ МЫ ЗДЕСЬ</p>
+      <h2 id="about-purpose">Меньше поисков, больше игры.</h2>
+      <p class="info-copy">В каталоге собраны серверы разных игр и форматов: от спокойного выживания до соревновательных матчей. Мы хотим, чтобы важные детали были понятны заранее: что за игра, какое сообщество тебя ждёт и как подключиться.</p>
+      <div class="info-facts row g-0" aria-label="Возможности проекта">
+        <div class="info-fact col-md-4 pe-md-4"><strong>Находи</strong><span>Просматривай каталог и фильтруй серверы по игре.</span></div>
+        <div class="info-fact col-md-4 px-md-4"><strong>Сравнивай</strong><span>Знакомься с описанием, форматом и особенностями сообщества.</span></div>
+        <div class="info-fact col-md-4 ps-md-4"><strong>Делись</strong><span>Подготовь свой сервер к публикации по нашему гайду.</span></div>
+      </div>
+    </section>
+
+    <!-- Контакт демонстрационный: домен .example зарезервирован и не принимает письма. -->
+    <section class="support-panel" aria-labelledby="support-heading">
+      <p class="eyebrow">ЕСТЬ ВОПРОС?</p>
+      <h2 id="support-heading">Поддержка проекта</h2>
+      <p>Напиши нам по вопросам каталога, сотрудничества или публикации сервера.</p>
+      <a class="support-email" href="mailto:support@servernaya.example">support@servernaya.example</a>
+      <p class="demo-note">Демо-контакт: адрес вымышленный и не принимает сообщения.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container-xl footer-inner"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a><div class="footer-meta"><nav class="footer-links d-flex align-items-center gap-3" aria-label="Ссылки в подвале"><a href="servers.html">Серверы</a><a href="account.html">Личный кабинет</a><a href="about.html" aria-current="page">О проекте</a><a href="add-server.html">Добавить сервер</a></nav><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></div></footer>
+</body>
+</html>
