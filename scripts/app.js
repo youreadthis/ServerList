@@ -23,6 +23,18 @@ const servers = [
     name: "Разминка", game: "CS2", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80",
     description: "Заходи потренировать аим или остаться на ещё одну карту.", tags: ["Deathmatch", "Аим-карты", "Без рейтинга"], online: 25, address: "warmup.gg",
   },
+  {
+    name: "Зелёный горизонт", game: "Minecraft", image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80",
+    description: "Строй поселение, исследуй новые биомы и играй в своём темпе.", tags: ["Выживание", "Общее строительство", "1.21"], online: 53, address: "greenhorizon.ru",
+  },
+  {
+    name: "Дикий рубеж", game: "Rust", image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=900&q=80",
+    description: "Собирай ресурсы, укрепляй базу и вступай в борьбу за территорию.", tags: ["x2", "Соло / дуо / трио", "Вайп по четвергам"], online: 71, address: "wildfrontier.gg",
+  },
+  {
+    name: "Точка прицела", game: "CS2", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80",
+    description: "Тренируй меткость на знакомых картах и играй командные матчи.", tags: ["5 на 5", "Аим-тренировка", "Без рейтинга"], online: 31, address: "aimpoint.gg",
+  },
 ];
 
 const defaultAccount = {
