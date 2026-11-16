@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Избранное — Серверная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body data-page="favorites">
+  <header class="navbar site-header py-2"><div class="container-xl header-inner d-flex align-items-center justify-content-between">
+    <a class="navbar-brand brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Серверная, главная"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
+    <nav class="navbar-nav flex-row main-nav gap-2 gap-sm-4 align-self-stretch" aria-label="Основная навигация"><a class="nav-link d-inline-flex align-items-center" href="index.html">Главная</a><a class="nav-link d-inline-flex align-items-center" href="servers.html">Серверы</a><a class="nav-link d-inline-flex align-items-center" href="about.html">О проекте</a><a class="nav-link d-inline-flex align-items-center" href="add-server.html">Для владельцев серверов</a></nav>
+    <button class="theme-toggle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Включить тёмную тему" title="Включить тёмную тему" aria-pressed="false"><i data-lucide="moon"></i></button>
+    <a class="account-link d-inline-flex align-items-center gap-0 gap-sm-3" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon d-flex align-items-center justify-content-center"><i data-lucide="user-round"></i></span></a>
+  </div></header>
+  <nav class="breadcrumbs container-xl" aria-label="Хлебные крошки"><a href="index.html">Главная</a><i data-lucide="chevron-right" aria-hidden="true"></i><a href="account.html">Личный кабинет</a><i data-lucide="chevron-right" aria-hidden="true"></i><span aria-current="page">Избранное</span></nav>
+  <main class="container-xl page-shell catalog-page favorites-page">
+    <section class="catalog-heading">
+      <div class="catalog-title-row d-flex align-items-end justify-content-between gap-3"><div><h1>Твои<br><span>избранные.</span></h1></div><p>Серверы, к которым<br>хочется вернуться.</p></div>
+      <p class="eyebrow catalog-tagline d-flex align-items-center gap-2"><i data-lucide="heart" aria-hidden="true"></i> Твоя коллекция серверов</p>
+    </section>
+    <div class="results-heading d-flex justify-content-between"><span>ИЗБРАННОЕ</span><span id="favorite-result-count">0 серверов</span></div>
+    <section class="server-grid catalog-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3" data-server-list="favorites" data-empty-message="Здесь пока пусто. Добавь серверы в избранное, нажав на сердечко в каталоге."></section>
+    <a class="favorites-browse-link d-inline-flex align-items-center gap-2" href="servers.html">Перейти в каталог <i data-lucide="arrow-right"></i></a>
+  </main>
+  <footer class="site-footer"><div class="container-xl footer-inner"><div class="footer-brand-group"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a><p class="footer-tagline">Находи миры, в которые хочется возвращаться.</p></div><nav class="footer-links d-flex align-items-center gap-3" aria-label="Ссылки в подвале"><a href="servers.html">Серверы</a><a href="account.html">Личный кабинет</a><a href="about.html">О проекте</a><a href="add-server.html">Добавить сервер</a></nav><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></footer>
+</body>
+</html>

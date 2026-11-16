@@ -17,8 +17,11 @@
   <header class="navbar site-header py-2"><div class="container-xl header-inner d-flex align-items-center justify-content-between">
     <a class="navbar-brand brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Серверная, главная"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
     <nav class="navbar-nav flex-row main-nav gap-2 gap-sm-4 align-self-stretch" aria-label="Основная навигация"><a class="nav-link d-inline-flex align-items-center" href="index.html">Главная</a><a class="nav-link d-inline-flex align-items-center" href="servers.html">Серверы</a><a class="nav-link d-inline-flex align-items-center" href="about.html">О проекте</a><a class="nav-link d-inline-flex align-items-center" href="add-server.html">Для владельцев серверов</a></nav>
+    <button class="theme-toggle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Включить тёмную тему" title="Включить тёмную тему" aria-pressed="false"><i data-lucide="moon"></i></button>
     <a class="account-link is-current d-inline-flex align-items-center gap-0 gap-sm-3" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon d-flex align-items-center justify-content-center"><i data-lucide="user-round"></i></span></a>
   </div></header>
+
+  <nav class="breadcrumbs container-xl" aria-label="Хлебные крошки"><a href="index.html">Главная</a><i data-lucide="chevron-right" aria-hidden="true"></i><span aria-current="page">Личный кабинет</span></nav>
 
   <main class="container-xl page-shell account-page">
     <section class="account-heading d-flex align-items-end justify-content-between gap-3"><div><p class="eyebrow">Твоё пространство</p><h1>Личный<br><span>кабинет.</span></h1></div><a class="btn btn-outline-dark d-inline-flex align-items-center justify-content-center gap-2 button" href="servers.html"><i data-lucide="plus"></i> Найти сервер</a></section>
@@ -30,10 +33,14 @@
       <a class="profile-edit d-inline-flex align-items-center justify-content-center" href="register.html" aria-label="Создать аккаунт"><i data-lucide="pencil"></i></a>
     </section>
     <section class="account-servers">
-      <div class="section-heading d-flex align-items-end justify-content-between gap-3"><div><p class="eyebrow">ТВОИ ПРОЕКТЫ</p><h2>Размещённые серверы <span class="heading-count" id="owned-count">02</span></h2></div><a class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 button button-small" href="add-server.html"><i data-lucide="plus"></i> Добавить сервер</a></div>
+      <div class="section-heading d-flex align-items-end justify-content-between gap-3"><div><p class="eyebrow">ТВОИ ПРОЕКТЫ</p><h2>Размещённые серверы <span class="heading-count" id="owned-count"></span></h2></div><a class="btn btn-primary d-inline-flex align-items-center justify-content-center gap-2 button button-small" href="add-server.html"><i data-lucide="plus"></i> Добавить сервер</a></div>
       <div class="owned-list" id="owned-servers"></div>
     </section>
+    <section class="account-servers account-favorites" aria-labelledby="favorites-heading">
+      <div class="section-heading d-flex align-items-end justify-content-between gap-3"><div><p class="eyebrow">СОХРАНЁННОЕ</p><h2 id="favorites-heading">Избранное <span class="heading-count" id="favorite-count">00</span></h2></div><a class="btn btn-outline-dark d-inline-flex align-items-center justify-content-center gap-2 button button-small" href="favorites.html"><i data-lucide="heart"></i> Открыть избранное</a></div>
+      <p class="account-favorites-note">Собранные тобой серверы всегда под рукой.</p>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container-xl footer-inner"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a><div class="footer-meta"><nav class="footer-links d-flex align-items-center gap-3" aria-label="Ссылки в подвале"><a href="servers.html">Серверы</a><a href="account.html">Личный кабинет</a><a href="about.html">О проекте</a><a href="add-server.html">Добавить сервер</a></nav><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></div></footer>
+  <footer class="site-footer"><div class="container-xl footer-inner"><div class="footer-brand-group"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a><p class="footer-tagline">Находи миры, в которые хочется возвращаться.</p></div><nav class="footer-links d-flex align-items-center gap-3" aria-label="Ссылки в подвале"><a href="servers.html">Серверы</a><a href="account.html">Личный кабинет</a><a href="about.html">О проекте</a><a href="add-server.html">Добавить сервер</a></nav><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></footer>
 </body>
 </html>

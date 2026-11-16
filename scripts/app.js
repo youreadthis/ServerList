@@ -51,8 +51,47 @@ function readAccount() {
   }
 }
 
+function readFavorites() {
+  try {
+    const favorites = JSON.parse(localStorage.getItem("servernaya-favorites") || "[]");
+    return Array.isArray(favorites) ? favorites : [];
+  } catch {
+    return [];
+  }
+}
+
+function initializeTheme() {
+  const toggle = document.querySelector(".theme-toggle");
+  if (!toggle) return;
+
+  const applyTheme = (theme) => {
+    const isDark = theme === "dark";
+    document.body.dataset.theme = theme;
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.setAttribute("aria-label", isDark ? "Включить светлую тему" : "Включить тёмную тему");
+    toggle.title = isDark ? "Включить светлую тему" : "Включить тёмную тему";
+    toggle.innerHTML = `<i data-lucide="${isDark ? "sun" : "moon"}"></i>`;
+    document.querySelector('meta[name="theme-color"]').content = isDark ? "#171c1a" : "#f5f6f2";
+  };
+
+  applyTheme(localStorage.getItem("servernaya-theme") === "dark" ? "dark" : "light");
+  toggle.addEventListener("click", () => {
+    const theme = document.body.dataset.theme === "dark" ? "light" : "dark";
+    const changeTheme = () => {
+      localStorage.setItem("servernaya-theme", theme);
+      applyTheme(theme);
+      if (window.lucide) window.lucide.createIcons();
+    };
+    if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.startViewTransition(changeTheme);
+    } else {
+      changeTheme();
+    }
+  });
+}
+
 function renderServerCard(server, index) {
-  const favorites = JSON.parse(localStorage.getItem("servernaya-favorites") || "[]");
+  const favorites = readFavorites();
   const isFavorite = favorites.includes(server.name);
   // Карточка сервера
   const card = `
@@ -80,8 +119,8 @@ function renderServerCard(server, index) {
 function renderServers(container, items) {
   if (!container) return;
   container.innerHTML = items.length
-    ? items.map(renderServerCard).join("")
-    : '<div class="empty-state"><i data-lucide="search-x"></i>По этому запросу ничего не нашлось. Попробуй изменить фильтры.</div>';
+    ? items.map((server, index) => renderServerCard(server, index)).join("")
+    : `<div class="empty-state"><i data-lucide="search-x"></i>${container.dataset.emptyMessage || "По этому запросу ничего не нашлось. Попробуй изменить фильтры."}</div>`;
   if (window.lucide) window.lucide.createIcons();
 }
 
@@ -139,6 +178,18 @@ function initializeAccount() {
       <span class="owned-address col-auto">${server.address}</span>
       <span class="status-pill badge rounded-0 col-auto">Активен</span>
     </article>`).join("") : '<div class="empty-state">Пока нет размещённых серверов.</div>';
+  const favoritesCount = document.querySelector("#favorite-count");
+  if (favoritesCount) favoritesCount.textContent = String(readFavorites().length).padStart(2, "0");
+}
+
+function initializeFavorites() {
+  const list = document.querySelector('[data-server-list="favorites"]');
+  if (!list) return;
+  const favorites = readFavorites();
+  const favoriteServers = servers.filter((server) => favorites.includes(server.name));
+  renderServers(list, favoriteServers);
+  const count = document.querySelector("#favorite-result-count");
+  if (count) count.textContent = `${favoriteServers.length} ${favoriteServers.length === 1 ? "сервер" : favoriteServers.length > 1 && favoriteServers.length < 5 ? "сервера" : "серверов"}`;
 }
 
 function initializeRegistration() {
@@ -161,18 +212,27 @@ function initializeRegistration() {
 document.addEventListener("click", (event) => {
   const button = event.target.closest("[data-favorite]");
   if (!button) return;
-  const favorites = JSON.parse(localStorage.getItem("servernaya-favorites") || "[]");
+  const favorites = readFavorites();
   const name = button.dataset.favorite;
   const updated = favorites.includes(name) ? favorites.filter((item) => item !== name) : [...favorites, name];
   localStorage.setItem("servernaya-favorites", JSON.stringify(updated));
+  if (document.body.dataset.page === "favorites") {
+    initializeFavorites();
+    if (window.lucide) window.lucide.createIcons();
+    return;
+  }
   button.classList.toggle("is-favorite", updated.includes(name));
   button.setAttribute("aria-pressed", String(updated.includes(name)));
   button.setAttribute("aria-label", updated.includes(name) ? "Убрать из избранного" : "Добавить в избранное");
+  const favoritesCount = document.querySelector("#favorite-count");
+  if (favoritesCount) favoritesCount.textContent = String(updated.length).padStart(2, "0");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  initializeTheme();
   if (window.lucide) window.lucide.createIcons();
   initializeCatalog();
   initializeAccount();
+  initializeFavorites();
   initializeRegistration();
 });
