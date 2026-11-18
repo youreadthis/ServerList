@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>Статистика сервера — Серверная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body data-page="stats">
+  <header class="navbar site-header py-2"><div class="container-xl header-inner d-flex align-items-center justify-content-between">
+    <a class="navbar-brand brand d-inline-flex align-items-center gap-2" href="index.html" aria-label="Серверная, главная"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a>
+    <nav class="navbar-nav flex-row main-nav gap-2 gap-sm-4 align-self-stretch" aria-label="Основная навигация"><a class="nav-link d-inline-flex align-items-center" href="index.html">Главная</a><a class="nav-link d-inline-flex align-items-center active" href="servers.html">Серверы</a><a class="nav-link d-inline-flex align-items-center" href="about.html">О проекте</a><a class="nav-link d-inline-flex align-items-center" href="add-server.html">Для владельцев серверов</a></nav>
+    <button class="theme-toggle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Включить тёмную тему" title="Включить тёмную тему" aria-pressed="false"><i data-lucide="moon"></i></button>
+    <a class="account-link d-inline-flex align-items-center gap-0 gap-sm-3" href="account.html" aria-label="Личный кабинет"><span class="account-link-label">Личный кабинет</span><span class="account-icon d-flex align-items-center justify-content-center"><i data-lucide="user-round"></i></span></a>
+  </div></header>
+
+  <nav class="breadcrumbs container-xl" aria-label="Хлебные крошки"><a href="index.html">Главная</a><i data-lucide="chevron-right" aria-hidden="true"></i><a href="account.html">Личный кабинет</a><i data-lucide="chevron-right" aria-hidden="true"></i><a id="stats-server-crumb" href="account.html#owned-servers">Сервер</a><i data-lucide="chevron-right" aria-hidden="true"></i><span aria-current="page">Статистика</span></nav>
+
+  <main class="container-xl page-shell stats-page">
+    <section class="stats-heading d-flex align-items-end justify-content-between gap-3">
+      <div>
+        <p class="eyebrow">АНАЛИТИКА КАРТОЧКИ</p>
+        <h1>Статистика</h1>
+        <div class="stats-server d-flex align-items-center gap-3">
+          <img class="stats-server-image" id="stats-server-image" src="" alt="">
+          <div class="stats-server-info">
+            <p class="eyebrow" id="stats-server-game"></p>
+            <h2 id="stats-server-name"></h2>
+            <p class="stats-server-meta mb-0"><span id="stats-server-address"></span> · <span id="stats-server-online"></span></p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-outline-dark d-inline-flex align-items-center justify-content-center gap-2 button stats-back-link" href="servers.html"><i data-lucide="arrow-left" aria-hidden="true"></i> К каталогу</a>
+    </section>
+
+    <section class="stats-summary row row-cols-1 row-cols-sm-3 g-3" aria-label="Итоги за 7 дней">
+      <div class="col"><article class="stats-metric" style="--metric-color:#ff6600"><div class="stats-metric-top d-flex align-items-center justify-content-between"><span>Просмотры</span><i data-lucide="eye" aria-hidden="true"></i></div><p class="stats-metric-value" data-stat-value="views">0</p></article></div>
+      <div class="col"><article class="stats-metric" style="--metric-color:#dc5465"><div class="stats-metric-top d-flex align-items-center justify-content-between"><span>Лайки</span><i data-lucide="heart" aria-hidden="true"></i></div><p class="stats-metric-value" data-stat-value="likes">0</p></article></div>
+      <div class="col"><article class="stats-metric" style="--metric-color:#009999"><div class="stats-metric-top d-flex align-items-center justify-content-between"><span>Переходы</span><i data-lucide="mouse-pointer-2" aria-hidden="true"></i></div><p class="stats-metric-value" data-stat-value="transitions">0</p></article></div>
+    </section>
+
+    <section class="stats-chart-section" aria-labelledby="stats-chart-title">
+      <div class="stats-chart-heading d-flex align-items-end justify-content-between gap-3">
+        <div><p class="eyebrow">ДИНАМИКА ЗА 7 ДНЕЙ</p><h2 id="stats-chart-title">Изменение показателей</h2></div>
+        <span class="stats-demo-note">Демонстрационные данные</span>
+      </div>
+      <div class="stats-tabs" role="tablist" aria-label="Показатель на графике">
+        <button class="stats-tab is-active" type="button" role="tab" aria-selected="true" data-stats-metric="views"><i data-lucide="eye" aria-hidden="true"></i> Просмотры</button>
+        <button class="stats-tab" type="button" role="tab" aria-selected="false" data-stats-metric="likes"><i data-lucide="heart" aria-hidden="true"></i> Лайки</button>
+        <button class="stats-tab" type="button" role="tab" aria-selected="false" data-stats-metric="transitions"><i data-lucide="mouse-pointer-2" aria-hidden="true"></i> Переходы</button>
+      </div>
+      <div class="stats-chart-wrap"><canvas id="stats-chart" role="img" aria-label="График изменения просмотров за последние семь дней"></canvas></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container-xl footer-inner"><div class="footer-brand-group"><a class="brand footer-brand d-inline-flex align-items-center gap-2" href="index.html"><span class="brand-mark d-flex align-items-center justify-content-center"><i data-lucide="gamepad-2"></i></span><span>серверная<span class="brand-period">.</span></span></a><p class="footer-tagline">Находи миры, в которые хочется возвращаться.</p></div><nav class="footer-links d-flex align-items-center gap-3" aria-label="Ссылки в подвале"><a href="servers.html">Серверы</a><a href="account.html">Личный кабинет</a><a href="about.html">О проекте</a><a href="add-server.html">Добавить сервер</a></nav><span class="footer-rights">© 2026 Серверная. Все права защищены.</span></div></footer>
+</body>
+</html>
